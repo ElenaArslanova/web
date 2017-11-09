@@ -15,13 +15,7 @@ body {
 	color: #4f4336;
 }
 
-/*.card {
-	background: white;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}*/
 .card {
-	/*background: #e2e1e0;*/
-	/*background: url(../images/dust_scratches.png);*/
 	background: white;
 	border-radius: 2px;
 	margin: 1rem;
@@ -37,22 +31,6 @@ body {
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-/*.card-title {
-	position: absolute;
-	top: 45%;
-	width: 100%;
-	color: white;
-	font-family: Catamaran, serif;
-	font-weight: bold;
-	font-size: 300%;
-}*/
-
 .group-header {
 	padding-top: 20px;
-}
-
-@media screen and (max-width: 768px) {
-	.col-sm-4 {
-		padding-bottom: 8px;
-	}
 }
