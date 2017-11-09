@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Graphs</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran">
+	<link rel="stylesheet" type="text/css" href="css/algorithms.css">
+	<meta name="viewport" content="width-device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable-no">
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-title project-title" href="#">Graphs</a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse-main">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="main.html">Главная</a></li>
+					<li><a href="main.html#about">Информация</a></li>
+					<li><a href="algorithms.html">Алгоритмы</a></li>
+					<li><a href="#gallery">Галерея</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- Search algorithms -->
+	<div id="search-algorithms">
+		<div class="container-fluid">
+			<div class="row group-header">
+				<div class="col-sm-12 text-center lead">Поиск в графе</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="card text-center">
+						<img src="images/traverse.png" class="card-img-top" alt="">
+						<div class="card-block">
+							<h4 class="card-title">Обход графа</h4>
+							<ul class="list-group">
+								<a href="#" class="list-group-item list-group-item-action">Поиск в ширину</a>
+								<a href="#" class="list-group-item list-group-item-action">Поиск в глубину</a>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="card text-center">
+						<img src="images/tree.jpg" class="card-img-top" alt="">
+						<div class="card-block">
+							<h4 class="card-title">Минимальный остов</h4>
+							<ul class="list-group">
+								<a href="#" class="list-group-item list-group-item-action">Алгоритм Борувки</a>
+								<a href="#" class="list-group-item list-group-item-action">Алгоритм Прима</a>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="card text-center">
+						<img src="images/path.jpg" class="card-img-top" alt="">
+						<div class="card-block">
+							<h4 class="card-title">Кратчайший путь</h4>
+							<ul class="list-group">
+								<a href="#" class="list-group-item list-group-item-action">Алгоритм Форда-Беллмана</a>
+								<a href="#" class="list-group-item list-group-item-action">Алгоритм Дейкстры</a>
+							</ul>
+						</div>
+					</div>
+				</div>				
+			</div>			
+		</div>
+		<!-- /Search algorithms -->
+		<!-- Flow algorithms -->
+		<div id="flow-algorithms">
+			<div class="container-fluid">
+				<div class="row group-header">
+					<div class="col-sm-12 text-center lead">Потоки в сетях</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="card text-center">
+							<img src="images/maxflow.png" class="card-img-top" alt="">
+							<div class="card-block">
+								<h4 class="card-title">Максимальный поток</h4>
+								<ul class="list-group">
+									<a href="#" class="list-group-item list-group-item-action">Алгоритм Флойда-Фалкерсона</a>
+									<a href="#" class="list-group-item list-group-item-action">Поиск f-дополняющей цепи</a>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="card text-center">
+							<img src="images/pipes.png" class="card-img-top" alt="">
+							<div class="card-block">
+								<h4 class="card-title">Ограничение потока</h4>
+								<ul class="list-group">
+									<a href="#" class="list-group-item list-group-item-action">С ограничением на пропускную способность</a>
+									<a href="#" class="list-group-item list-group-item-action">Поиск f-допустимого потока</a>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="card text-center">
+							<img src="images/tap.png" class="card-img-top" alt="">
+							<div class="card-block">
+								<h4 class="card-title">Поток заданной величины</h4>
+								<ul class="list-group">
+									<a href="#" class="list-group-item list-group-item-action">Поиск потока </a>
+									<a href="#" class="list-group-item list-group-item-action">Поиск минимального потока</a>
+								</ul>
+							</div>
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>
+		<!-- /Flow algorithms -->
+		<!-- Matching algorithms -->
+		<div id="matching-algorithms">
+			<div class="container-fluid">
+				<div class="row group-header">
+					<div class="col-sm-12 text-center lead">Паросочетания</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="card text-center">
+							<img src="images/matching1.png" class="card-img-top" alt="">
+							<div class="card-block">
+								<h4 class="card-title">Наибольшее паросочетание</h4>
+								<ul class="list-group">
+									<a href="#" class="list-group-item list-group-item-action">Алгоритм Форда-Фалкерсона (модификация)</a>
+									<a href="#" class="list-group-item list-group-item-action">Алгоритм Хопкрофта-Карпа</a>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="card text-center">
+							<img src="images/tools.png" class="card-img-top" alt="">
+							<div class="card-block">
+								<h4 class="card-title">Дополнительные структуры</h4>
+								<ul class="list-group">
+									<a href="#" class="list-group-item list-group-item-action">Поиск М-чередующейся цепи</a>
+									<a href="#" class="list-group-item list-group-item-action">Построение M-множества</a>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="card text-center">
+							<img src="images/box.png" class="card-img-top" alt="">
+							<div class="card-block">
+								<h4 class="card-title">Полное паросочетание</h4>
+								<ul class="list-group">
+									<a href="#" class="list-group-item list-group-item-action">Алгоритм Куна</a>
+									<a href="#" class="list-group-item list-group-item-action">Венгерский алгоритм</a>
+								</ul>
+							</div>
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>
+		<!-- /Matching algorithms -->
+	</div>
+</body>
+</html>

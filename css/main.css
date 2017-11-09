@@ -1,0 +1,101 @@
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+.pad-section {
+	padding: 50px 0;
+}
+
+.pad-section img {
+	width: 100%;
+}
+
+.margin-section {
+	margin-top: 25px;
+}
+
+.text-vcenter {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.project-title{
+	font-family: Catamaran, serif;
+	font-weight: bold;
+	font-size: 250%;
+	color: #4f4336;
+}
+
+#home {
+	background: url(../images/fence.jpg) no-repeat center center fixed;
+	color: #e5dfd3;
+	display: table;
+	height: 100%;
+	position: relative;
+	width: 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#home .btn{
+	opacity: 0.8;
+}
+
+#sections {
+	background-color: #306d9f;
+	color: white;
+}
+
+#sections .fa {
+	border: 2px solid white;
+	border-radius: 50%;
+	display: inline-block;
+	font-size: 75px;
+	height: 140px;
+	line-height: 140px;
+	text-align: center;
+	vertical-align: middle;
+	width: 140px;
+}
+
+#stat {
+	background-color: #306d9f;
+	color: white;
+	font-family: Catamaran, serif;
+}
+
+#bfs-example {
+	background: url(../images/m-underground.jpg) no-repeat center center fixed;
+	display: table;
+	height: 100%;
+	position: relative;
+	width: 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#hamiltonian-example {
+	background: url(../images/pinned-map.jpg) no-repeat center center fixed;
+	display: table;
+	height: 100%;
+	position: relative;
+	width: 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;	
+}
+
+.panel {
+	opacity: 0.85;
+}
+
+footer {
+	padding: 20px 0;
+}
