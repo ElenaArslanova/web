@@ -8,6 +8,10 @@ body {
 	padding-top: 50px;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .project-title{
 	font-family: Catamaran, serif;
 	font-weight: bold;
