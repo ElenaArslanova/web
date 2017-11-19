@@ -38,3 +38,164 @@ ul {
 .group-header {
 	padding-top: 20px;
 }
+
+@media screen and (min-width: 1500px) {
+	h1 {
+		font-size: 50px;
+	}
+
+	h3 {
+		font-size: 38px;
+	}
+
+	h4 {
+		font-size: 22px;
+	}
+
+	body, h2, .btn {
+    	font-size: 25px;
+	}	
+
+	.project-title {
+		font-size: 52px;
+	}
+
+	.margin-section {
+		margin-top: 12px;
+	}
+
+	.container {
+		width: 80%;
+	}
+
+
+	.lead {
+		font-size: 34px;
+	}
+
+	.col-large {
+		width: 45%;
+	}
+}
+
+@media screen and (min-width: 1500px){
+	.nav {
+  		margin-top: 20px;
+	}
+
+	.project-title {
+		font-size: 55px;
+	}
+
+	.margin-section {
+		margin-top: 25px;
+	}
+}
+
+@media screen and (min-width: 2000px){
+	body {
+		font-size: 30px;
+	}
+
+	h4 {
+		font-size: 30px;
+	}
+
+	.lead {
+		font-size: 40px;
+	}
+
+	.nav {
+  		margin-top: 40px;
+	}
+
+	.project-title {
+		font-size: 80px;
+	}
+
+	.margin-section {
+		margin-top: 60px;
+	}	
+}
+
+@media screen and (min-width: 2500px){
+	h1 {
+		font-size: 60px;
+	}
+
+	h3 {
+		font-size: 48px;
+	}
+
+	h4 {
+		font-size: 35px;
+	}
+
+	body, h2, .btn {
+		font-size: 35px;
+	}
+
+	.lead {
+		font-size: 45px;
+	}
+
+	.margin-section {
+		margin-top: 65px;
+	}	
+}
+
+@media screen and (min-width: 3000px){
+	h1 {
+		font-size: 80px;
+	}
+
+	h3 {
+		font-size: 68px;
+	}
+
+	h4{
+		font-size: 50px;
+	}
+
+	body, h2, .btn {
+		font-size: 45px;
+	}
+
+	.lead {
+		font-size: 50px;
+	}	
+}
+
+@media screen and (min-width: 4000px){
+	h1 {
+		font-size: 120px;
+	}
+
+	h3 {
+		font-size: 85px;
+	}
+
+	h4{
+		font-size: 60px;
+	}
+
+	.project-title {
+		font-size: 140px;
+	}
+
+	.nav {
+  		margin-top: 70px;
+	}
+
+	body, h2, .btn {
+		font-size: 55px;
+	}
+
+	.lead {
+		font-size: 70px;
+	}
+
+	.margin-section {
+		margin-top: 150px;
+	}	
+}

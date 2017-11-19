@@ -96,6 +96,150 @@ html, body {
 	opacity: 0.85;
 }
 
+.social:hover {
+     -webkit-transform: scale(1.2);
+     -moz-transform: scale(1.2);
+     -o-transform: scale(1.2);
+ }
+ .social {
+     -webkit-transform: scale(0.8);
+     -moz-transform: scale(0.8);
+     -o-transform: scale(0.8);
+     -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+     -o-transition-duration: 0.5s;
+ }
+
+ #social-fb:hover {
+     color: #3B5998;
+ }
+ #social-tw:hover {
+     color: #4099FF;
+ }
+ #social-gp:hover {
+     color: #d34836;
+ }
+ #social-em:hover {
+     color: #f39c12;
+ }
+
 footer {
-	padding: 20px 0;
+	padding: 10px 0;
+}
+
+@media screen and (min-width: 1500px) {
+	h1 {
+		font-size: 50px;
+	}
+
+	h3 {
+		font-size: 38px;
+	}
+
+	body, h2, .btn {
+    	font-size: 25px;
+	}	
+
+	.project-title {
+		font-size: 52px;
+	}
+
+	.container {
+		width: 80%;
+	}
+
+
+	.lead {
+		font-size: 34px;
+	}
+
+	.col-large {
+		width: 45%;
+	}
+}
+
+@media screen and (min-width: 1500px){
+	.nav {
+  		margin-top: 20px;
+	}
+
+	.project-title {
+		font-size: 55px;
+	}
+}
+
+@media screen and (min-width: 2000px){
+	body {
+		font-size: 30px;
+	}
+
+	.nav {
+  		margin-top: 40px;
+	}
+
+	.project-title {
+		font-size: 80px;
+	}
+}
+
+@media screen and (min-width: 2500px){
+	h1 {
+		font-size: 60px;
+	}
+
+	h3 {
+		font-size: 48px;
+	}
+
+	body, h2, .btn {
+		font-size: 35px;
+	}
+
+	.lead {
+		font-size: 40px;
+	}
+}
+
+@media screen and (min-width: 3000px){
+	h1 {
+		font-size: 80px;
+	}
+
+	h3 {
+		font-size: 68px;
+	}
+
+	body, h2, .btn {
+		font-size: 45px;
+	}
+
+	.lead {
+		font-size: 50px;
+	}	
+}
+
+@media screen and (min-width: 4000px){
+	h1 {
+		font-size: 120px;
+	}
+
+	h3 {
+		font-size: 85px;
+	}
+
+	.project-title {
+		font-size: 140px;
+	}
+
+	.nav {
+  		margin-top: 70px;
+	}
+
+	body, h2, .btn {
+		font-size: 55px;
+	}
+
+	.lead {
+		font-size: 75px;
+	}
 }
