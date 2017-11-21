@@ -1,0 +1,95 @@
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+.project-title{
+	font-family: Catamaran, serif;
+	font-weight: bold;
+	font-size: 250%;
+	color: #4f4336;
+}
+
+#gallery {
+	margin: 50px auto;
+}
+
+.loading {
+	background: transparent url(../images/loading.gif) center no-repeat;
+}
+
+.gallery-img {
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.gallery-img:hover {
+	opacity: 0.7;
+}
+
+.thumbnail {
+	height: 200px;
+}
+
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1031;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+    background-color: rgba(0,0,0,0.9)	
+}
+
+.modal-content {
+	background: url(../images/loading.gif) center no-repeat;
+	margin: auto;
+	display: block;
+	width: 85%;
+	max-width: 800px;
+	padding: 10px 0;
+}
+
+.modal-content, #caption { 
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+.close {
+	color: white;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover, .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
