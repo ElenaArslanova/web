@@ -36,36 +36,36 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-sm-3">
-						<div class="thumbnail loading">
-							<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZnEHJCvXSSwjfU93_On-g6lLRC6tcKzWk9ESJcALVCl11JhNx" id="img1" class="img-responsive gallery-img" alt="" onclick="showImage(event);">
-						</div>
+						<img src="images/polygons.jpg" id="img1" class="gallery-img loading img-thumbnail" alt="" onclick="showImage(event);">
 					</div>
 					<div class="col-sm-3">
-						<div class="thumbnail loading">
-							<img src="images/home.jpg" id="img2" class="img-responsive gallery-img" alt="" onclick="showImage(event);">
-						</div>
+						<img src="images/home.jpg" id="img2" class="gallery-img loading img-thumbnail" alt="" onclick="showImage(event);">
 					</div>
 					<div class="col-sm-3">
-						<div class="thumbnail loading">
-							<img src="images/polygons.jpg" id="img3" class="img-responsive gallery-img" alt="" onclick="showImage(event);">
-						</div>
+						<img src="images/polygons.jpg" id="img3" class="gallery-img loading img-thumbnail" alt="" onclick="showImage(event);">
 					</div>
 					<div class="col-sm-3">
-						<div class="thumbnail loading">
-							<img src="images/home.jpg" id="img4" class="img-responsive gallery-img" alt="" onclick="showImage(event);">
-						</div>
+						<img src="images/home.jpg" id="img4" class="gallery-img loading img-thumbnail" alt="" onclick="showImage(event);">
 					</div>
 				</div>
 			</div>
 			<div id="modal-window" class="modal">
 				<span class="close" onclick="closeImage();">&times;</span>
-				<img id="modal-img" class="loading modal-content" src="">
-				<div id="caption"></div>
+				<img id="modal-img" class="loading modal-content" src="" alt="">
+			</div>
+			<div id="help-window" class="modal">
+				<div class="container-fluid">
+					<span class="close" onclick="closeHelp();">&times;</span>
+					<div class="card card-inverse">
+						<div class="card-block text-center">
+							<p class="card-title">Справка</p>
+							<p class="card-text">ESC - выход</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>
 	<script type="text/javascript" src="scripts/gallery.js"></script>
-	<script type="text/javascript">
-		var gallery = new Gallery();
-	</script>
+	<script type="text/javascript"></script>
 </html>

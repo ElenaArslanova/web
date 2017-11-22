@@ -15,7 +15,17 @@ html, body {
 }
 
 .loading {
-	background: transparent url(../images/loading.gif) center no-repeat;
+	background-image: url(../images/loading.gif);
+	background-repeat: no-repeat; 
+	background-position: center;
+	background-color: transparent;
+	/*min-height: 100%;*/
+}
+
+[class*="col-"] {
+    float: none;
+    display: table-cell;
+    vertical-align: top;
 }
 
 .gallery-img {
@@ -27,10 +37,12 @@ html, body {
 	opacity: 0.7;
 }
 
-.thumbnail {
-	height: 200px;
+#help-window .card {
+	margin: 0 auto;
+	width: 50%;
+	background-color: #333;
+	color: white;
 }
-
 
 .modal {
 	display: none;
@@ -46,10 +58,10 @@ html, body {
 }
 
 .modal-content {
-	background: url(../images/loading.gif) center no-repeat;
 	margin: auto;
 	display: block;
 	width: 85%;
+	height: 100%;
 	max-width: 800px;
 	padding: 10px 0;
 }
