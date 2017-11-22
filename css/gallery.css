@@ -26,12 +26,6 @@ html, body {
 	background-color: transparent;
 }
 
-[class*="col-"] {
-    float: none;
-    display: table-cell;
-    vertical-align: top;
-}
-
 .gallery-img {
 	cursor: pointer;
 	transition: 0.3s;
@@ -104,10 +98,4 @@ html, body {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
-}
-
-@media only screen and (max-width: 700px){
-    .modal-content {
-        width: 100%;
-    }
 }
