@@ -10,24 +10,19 @@ html, body {
 	color: #4f4336;
 }
 
+body{
+	background: url(../images/dust_scratches.png) center center fixed;
+}
+
 #gallery {
 	margin: 50px auto;
-	background: url(../images/dust_scratches.png) center center fixed;
 }
 
 .padding-block{
 	padding-top: 13px;
 }
 
-.loading {
-	background-image: url(../images/loading.gif);
-	background-repeat: no-repeat; 
-	background-position: center;
-	background-color: transparent;
-}
-
 .gallery-img {
-	opacity: 0.5;
 	cursor: pointer;
 	transition: 0.3s;
 }
@@ -61,9 +56,10 @@ html, body {
 .modal-content {
 	margin: auto;
 	display: block;
-	width: 90%;
+	/*width: 90%;*/
 	max-width: 800px;
 	padding: 10px 0;
+	background-color: transparent; 
 }
 
 .modal-content, #caption { 

@@ -81,17 +81,16 @@ function processKeyDown(event){
 
 function checkLoading() {
 	var loading_interval = setInterval(function(){
-		var items = document.getElementsByClassName('gallery-img');
+		var items = document.querySelectorAll('img[data-src]');
 		var loaded = []
 		for (var i = 0; i < items.length; i++){
-			if (items[i].complete && items[i].naturalHeight > 1)
-				loaded.push(items[i]);	
+			var image = items[i];
+			image.setAttribute('src', image.getAttribute('data-src'));
+			image.onload = function(){
+    			image.removeAttribute('data-src');
+  			};
 		}
-		for (var i = 0; i < loaded.length; i++){
-			loaded[i].style.background = 'none';
-			loaded[i].style.opacity = 1
-		}
-		if (loaded.length == items.length)
+		if (items.length == 0)
 			clearInterval(loading_interval);
 	}, 1000);
 }
