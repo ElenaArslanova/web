@@ -27,6 +27,7 @@ html, body {
 }
 
 .gallery-img {
+	opacity: 0.5;
 	cursor: pointer;
 	transition: 0.3s;
 }
@@ -48,7 +49,7 @@ html, body {
 	display: none;
 	position: fixed;
 	z-index: 1031;
-	padding-top: 50px;
+	padding-top: 100px;
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -61,7 +62,6 @@ html, body {
 	margin: auto;
 	display: block;
 	width: 90%;
-	height: 100%;
 	max-width: 800px;
 	padding: 10px 0;
 }
@@ -98,4 +98,49 @@ html, body {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
+}
+
+@media screen and (min-width: 1500px){
+	.btn {
+		font-size: 20px;
+	}
+
+	.project-title {
+		font-size: 55px;
+	}
+
+	.nav {
+  		margin-top: 20px;
+  		font-size: 18px;
+	}
+}
+
+@media screen and (min-width: 2000px){
+	.btn {
+		font-size: 25px;
+	}
+
+	.project-title {
+		font-size: 80px;
+	}
+
+	.nav {
+  		margin-top: 40px;
+  		font-size: 25px;
+	}
+}
+
+@media screen and (min-width: 3500px){
+	.btn {
+		font-size: 45px;
+	}
+
+	.project-title {
+		font-size: 140px;
+	}
+
+	.nav {
+  		margin-top: 70px;
+  		font-size: 45px;
+	}
 }

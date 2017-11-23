@@ -87,8 +87,10 @@ function checkLoading() {
 			if (items[i].complete && items[i].naturalHeight > 1)
 				loaded.push(items[i]);	
 		}
-		for (var i = 0; i < loaded.length; i++)
+		for (var i = 0; i < loaded.length; i++){
 			loaded[i].style.background = 'none';
+			loaded[i].style.opacity = 1
+		}
 		if (loaded.length == items.length)
 			clearInterval(loading_interval);
 	}, 1000);
