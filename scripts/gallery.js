@@ -81,14 +81,10 @@ function processKeyDown(event){
 
 function checkLoading() {
 	var loading_interval = setInterval(function(){
-		var items = document.querySelectorAll('img[data-src]');
-		var loaded = []
+		var items = document.getElementsByClassName('loading');
 		for (var i = 0; i < items.length; i++){
 			var image = items[i];
-			image.setAttribute('src', image.getAttribute('data-src'));
-			image.onload = function(){
-    			image.removeAttribute('data-src');
-  			};
+			image.src = image.getAttribute('data-src');
 		}
 		if (items.length == 0)
 			clearInterval(loading_interval);
