@@ -40,7 +40,9 @@ class Gallery{
 function processModal(modal_id, close){
 	modal = document.getElementById(modal_id)
 	if (close){
-		modal.getElementsByTagName('img')[0].src = gallery.loading_gif;
+		modal_img = modal.getElementsByTagName('img')
+		if (modal_img.length != 0)
+			modal_img[0].src = gallery.loading_gif;
 		modal.style.display = 'none';
 	}
 	else
