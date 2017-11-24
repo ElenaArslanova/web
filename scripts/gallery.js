@@ -6,6 +6,7 @@ class Gallery{
 			this.item_id_to_index[this.items[i].id] = i;
 		this.current_index = 0;
 		this.image_opened = false;
+		this.loading_gif = 'images/loading.gif';
 		}
 	}
 
@@ -22,7 +23,7 @@ class Gallery{
 		this.image_opened = true;
 		this.current_index  = index;
 		processModal('modal-window', false);
-		document.getElementById('modal-img').src = image.src;
+		document.getElementById('modal-img').src = image.getAttribute('data-src');
 	}
 
 	showNextImage(direction){
@@ -38,8 +39,10 @@ class Gallery{
 
 function processModal(modal_id, close){
 	modal = document.getElementById(modal_id)
-	if (close)
+	if (close){
+		modal.getElementsByTagName('img')[0].src = gallery.loading_gif;
 		modal.style.display = 'none';
+	}
 	else
 		modal.style.display = 'block';
 }
@@ -88,7 +91,7 @@ function checkLoading() {
 		}
 		if (items.length == 0)
 			clearInterval(loading_interval);
-	}, 1000);
+	}, 700);
 }
 
 function checkReloadCookie(){
