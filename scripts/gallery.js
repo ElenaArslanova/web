@@ -170,7 +170,7 @@ function checkReloadCookie(){
 function setMainPageBackground(){
 	if (getCookie('mainpage_background') != null)
 		deleteCookie('mainpage_background');
-	setCookie('mainpage_background', gallery.items[gallery.current_index].src);
+	setCookie('mainpage_background', gallery.loaded_hq_images[gallery.current_index].src);
 }
 
 function setHash(value){
