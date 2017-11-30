@@ -109,6 +109,10 @@ body{
   		margin-top: 20px;
   		font-size: 18px;
 	}
+
+	#gallery{
+		padding-top: 30px;
+	}
 }
 
 @media screen and (min-width: 2000px){
@@ -124,6 +128,10 @@ body{
   		margin-top: 40px;
   		font-size: 25px;
 	}
+
+	#gallery{
+		padding-top: 60px;
+	}
 }
 
 @media screen and (min-width: 3500px){
@@ -138,5 +146,9 @@ body{
 	.nav {
   		margin-top: 70px;
   		font-size: 45px;
+	}
+
+	#gallery{
+		padding-top: 90px;
 	}
 }
