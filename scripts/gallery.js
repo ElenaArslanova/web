@@ -132,7 +132,7 @@ function closeHelp(){
 }
 
 function processKeyDown(event){
-	event.preventDefault();
+	event.preventDefault ? event.preventDefault() : (event.returnValue = false);
 	if  (event.keyCode == 27){
 		if (gallery.image_opened)
 			closeImage();
