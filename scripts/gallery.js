@@ -56,7 +56,7 @@ class Gallery{
 	}
 
 	isLoaded(image){
-		return image.complete && image.naturalHeight !== 0;
+		return image != null && image.complete && image.naturalHeight !== 0;
 	}
 
 	getNeighboursIndices(item_index){
@@ -100,7 +100,7 @@ class Gallery{
 		var next_image_index = direction > 0 ? neighbours[1] : neighbours[0];
 		var next_hq_image = this.loaded_hq_images[next_image_index];
 		var modal = this.modals['image'];
-		if (next_hq_image == null || !this.isLoaded(next_hq_image)){
+		if (!this.isLoaded(next_hq_image)){
 			modal.setLoading();
 			this.showImage(next_image_index, false);
 		}
@@ -112,7 +112,10 @@ class Gallery{
 
 function showImage(event){
 	var index = gallery.item_id_to_index[event.target.id];
-	gallery.showImage(index);
+	if (gallery.isLoaded(gallery.loaded_hq_images[index]))
+		gallery.showImage(index, true);
+	else
+		gallery.showImage(index);
 	setHash(index);
 }
 
