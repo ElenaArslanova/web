@@ -6,32 +6,12 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran">
-	<link rel="stylesheet" type="text/css" href="css/algorithms.css">
-	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../css/algorithms.css">
+	<link rel="shortcut icon" href="../images/favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-title project-title" href="#">Graphs</a>
-			</div>
-			<div class="collapse navbar-collapse" id="navbar-collapse-main">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="main.html">Главная</a></li>
-					<li><a href="main.html#about">Информация</a></li>
-					<li><a href="algorithms.html">Алгоритмы</a></li>
-					<li><a href="gallery.html">Галерея</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+	%include('header.tpl')
 	<!-- Search algorithms -->
 	<div id="search-algorithms">
 		<div class="container-fluid">
@@ -41,7 +21,7 @@
 			<div class="row">
 				<div class="col-sm-4">
 					<div class="card text-center">
-						<img src="images/traverse.png" class="card-img-top" alt="">
+						<img src="../images/traverse.png" class="card-img-top" alt="">
 						<div class="card-block">
 							<h4 class="card-title">Обход графа</h4>
 							<ul class="list-group">
@@ -53,7 +33,7 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="card text-center">
-						<img src="images/tree.jpg" class="card-img-top" alt="">
+						<img src="../images/tree.jpg" class="card-img-top" alt="">
 						<div class="card-block">
 							<h4 class="card-title">Минимальный остов</h4>
 							<ul class="list-group">
@@ -65,7 +45,7 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="card text-center">
-						<img src="images/path.jpg" class="card-img-top" alt="">
+						<img src="../images/path.jpg" class="card-img-top" alt="">
 						<div class="card-block">
 							<h4 class="card-title">Кратчайший путь</h4>
 							<ul class="list-group">
@@ -87,7 +67,7 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="card text-center">
-							<img src="images/maxflow.png" class="card-img-top" alt="">
+							<img src="../images/maxflow.png" class="card-img-top" alt="">
 							<div class="card-block">
 								<h4 class="card-title">Максимальный поток</h4>
 								<ul class="list-group">
@@ -99,7 +79,7 @@
 					</div>
 					<div class="col-sm-4">
 						<div class="card text-center">
-							<img src="images/pipes.png" class="card-img-top" alt="">
+							<img src="../images/pipes.png" class="card-img-top" alt="">
 							<div class="card-block">
 								<h4 class="card-title">Ограничение потока</h4>
 								<ul class="list-group">
@@ -111,7 +91,7 @@
 					</div>
 					<div class="col-sm-4">
 						<div class="card text-center">
-							<img src="images/tap.png" class="card-img-top" alt="">
+							<img src="../images/tap.png" class="card-img-top" alt="">
 							<div class="card-block">
 								<h4 class="card-title">Поток заданной величины</h4>
 								<ul class="list-group">
@@ -134,7 +114,7 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="card text-center">
-							<img src="images/matching1.png" class="card-img-top" alt="">
+							<img src="../images/matching1.png" class="card-img-top" alt="">
 							<div class="card-block">
 								<h4 class="card-title">Наибольшее паросочетание</h4>
 								<ul class="list-group">
@@ -146,7 +126,7 @@
 					</div>
 					<div class="col-sm-4">
 						<div class="card text-center">
-							<img src="images/tools.png" class="card-img-top" alt="">
+							<img src="../images/tools.png" class="card-img-top" alt="">
 							<div class="card-block">
 								<h4 class="card-title">Дополнительные структуры</h4>
 								<ul class="list-group">
@@ -158,7 +138,7 @@
 					</div>
 					<div class="col-sm-4">
 						<div class="card text-center">
-							<img src="images/box.png" class="card-img-top" alt="">
+							<img src="../images/box.png" class="card-img-top" alt="">
 							<div class="card-block">
 								<h4 class="card-title">Полное паросочетание</h4>
 								<ul class="list-group">

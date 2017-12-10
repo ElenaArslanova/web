@@ -6,8 +6,8 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran">
-		<link rel="stylesheet" type="text/css" href="css/main.css">
-		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+		<link rel="shortcut icon" href="../images/favicon.ico">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
@@ -24,6 +24,7 @@
 				</div>
 				<div class="collapse navbar-collapse" id="navbar-collapse-main">
 					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#login" id="nav-login">Вход</a></li>
 						<li><a href="#home">Главная</a></li>
 						<li><a href="#about">Информация</a></li>
 						<li><a href="algorithms.html">Алгоритмы</a></li>
@@ -34,10 +35,36 @@
 		</nav>
 		<!-- Home -->
 		<div id="home" class="home">
-			<div class="text-vcenter">
+			<div class="home-text text-vcenter">
 				<h1>Graphs</h1>
 				<h3>Погружение в алгоритмы</h3>
-				<a href="#about" class="btn btn-default btn-lg">Начать</a>
+				<a href="../html/algorithms.html" class="btn btn-default btn-lg">Начать</a>
+			</div>
+			<div id="modal-form" class="modal">
+				<span onclick="document.getElementById('modal-form').style.display='none'" class="close">&times;</span>
+				<div class="container-fluid">
+					<div class="row form-switcher">
+					    <div class="col-xs-6 option" id="reg-option"><p class="option-text">Регистрация</p></div>
+					    <div class="col-xs-6 option" id="log-option"><p class="option-text">Вход</p></div>
+					</div>
+				</div>
+				<form id="login-form" class="modal-content" name ='log' action="/" method="post">
+					<div class="form-group form-content text-center">
+						<p><h2>Вход</h2></p>
+						<input class="form-control" type="text" name="user" placeholder="Логин" required>
+					    <input class="form-control" type="password" name="password" placeholder="Пароль" required>
+					    <input value='Войти' type="submit">
+					</div>
+				</form>
+				<form id="registration-form" class="modal-content" name='registration' action="/" method="post">
+					<div class="form-group form-content text-center">
+						<p><h2>Регистрация</h2></p>
+			    		<input class="form-control" type="text" name="user_start" placeholder="Логин" required>
+			    		<input class="form-control" type="email" name="email_start" placeholder="Email" required>
+					    <input class="form-control" type="password" name="password_start" placeholder="Пароль" required>
+					    <input value='Зарегистрироваться' type="submit">	
+					</div>
+				</form>
 			</div>
 		</div>
 		<!-- /Home -->
@@ -46,7 +73,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6">
-						<img src="images/logo.png" alt="">
+						<img src="../images/logo.png" alt="">
 					</div>
 					<div class="col-sm-6 text-center margin-section">
 						<p class="lead">Графовые алгоритмы с пошаговым объяснением и примерами кода на Python</p>
@@ -141,11 +168,8 @@
 			</div>
 		</footer>
 		<!-- /Footer -->
-		<script type="text/javascript" src="scripts/cookie.js"></script>
-		<script type="text/javascript">
-			var background = getCookie('mainpage_background');
-			if (background != null)
-				document.getElementById('home').style.background = 'url(' + "'" + background.value + "'" + ') no-repeat center center fixed';
-		</script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="../scripts/cookie.js"></script>
+		<script type="text/javascript" src="../scripts/main.js"></script>
 	</body>
 </html>

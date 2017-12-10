@@ -1,0 +1,23 @@
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	background: url(../images/pastel1.png) no-repeat center center fixed;
+}
+
+.padding-block{
+	padding-top: 60px;
+}
+
+.table {
+	background: rgba(255,255,255, 0.5);
+}
+
+.project-title{
+	font-family: Catamaran, serif;
+	font-weight: bold;
+	font-size: 250%;
+	color: #4f4336;
+}
