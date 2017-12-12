@@ -17,16 +17,18 @@
 		<div class="table-responsive">
 			<table class="table">
 				<thead>
-					<th>N</th>
-					<th>Действие</th>
-					<th>Дата</th>
+					<tr>
+						<th>N</th>
+						<th>Действие</th>
+						<th>Дата</th>
+					</tr>
 				</thead>
 				<tbody>
 					%for idx, info in enumerate(stat, start=1):
 						<tr>
-							<th>{{idx}}</th>
-							<th>{{info.activity}}</th>
-							<th>{{info.date.strftime('%H:%M %d-%m-%Y')}}</th>
+							<td>{{idx}}</td>
+							<td>{{info.activity}}</td>
+							<td>{{info.date.strftime('%H:%M %d-%m-%Y')}}</td>
 						</tr>
 					%end
 				</tbody>
@@ -42,6 +44,39 @@
 						<li class="list-group-item text-center">{{idx}}. {{visit.date.strftime('%H:%M %d-%m-%Y')}}</li>
 					%end
 				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+				<p class="text-center">История правок сообщений</p>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="table-responsive">
+				<table class="table">
+					<thead>
+						<tr class="bold-row">
+							<th>Комментарий</th>
+							<th>Правки</th>
+						</tr>
+					</thead>
+					<tbody>
+						%for comment in comment_editions:
+							%if comment_editions[comment]:
+								<tr>
+									<td>{{comment[0]}}</td>
+									<td>
+										%for edition in comment_editions[comment]:
+											<p>{{edition[2]}}</p>
+										%end
+									</td>
+								</tr>
+							%end
+						%end
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>

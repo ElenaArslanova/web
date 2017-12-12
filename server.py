@@ -122,7 +122,8 @@ def stats():
     stats = alchemy.get_stat(cork.current_user.username)
     visits = alchemy.get_user_visits(cork.current_user.username)
     return template('views/statistics.tpl', name=cork.current_user.username, stat=stats, visits=visits,
-                    logged_in=is_logged_in())
+                    logged_in=is_logged_in(),
+                    comment_editions=alchemy.get_user_comments_with_editions(cork.current_user.username))
 
 @route('/<filename:path>')
 def send_file(filename):
@@ -140,7 +141,6 @@ if __name__ == "__main__":
     bottle.debug(True)
     bottle.run(app=application, host='localhost', port=8080)
 
-    # session = alchemy.get_session()
     # thmb_paths = ["../images/thmb_polygons.jpg", "../images/thmb_home.jpg", "../images/thmb_fence.jpg",
     #               "../images/thmb_pastel1.png",
     #               "../images/thmb_triangles.png", "../images/thmb_pastel2.png", "../images/thmb_valley.jpg",

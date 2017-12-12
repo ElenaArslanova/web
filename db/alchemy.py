@@ -63,6 +63,11 @@ class Alchemy:
         self.__session.add(visit)
         self.__session.commit()
 
+    def get_user_comments_with_editions(self, user):
+        user_id = self.__session.query(User).filter(User.login == user).one().id
+        comments = self.__session.query(Comment).filter(Comment.user_id == user_id).all()
+        return {(c.text, c.date):self.get_editions(c.id, user) for c in comments}
+
     def get_visits_count(self, date=False):
         if not date:
             return self.__session.query(Visit).filter(Visit.unique > 0).count()
