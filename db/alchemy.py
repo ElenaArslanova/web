@@ -11,6 +11,7 @@ class Alchemy:
         Base.metadata.bind = engine
         DBSession = sessionmaker(bind=engine)
         self.__session = DBSession()
+        self.__counter_file = 'db//counter.txt'
 
     def get_session(self):
         return self.__session
@@ -78,3 +79,13 @@ class Alchemy:
 
     def get_stat(self, login):
         return self.__session.query(Visit).filter(Visit.user_logged_in == login).all()
+
+    def get_counter(self):
+        with open(self.__counter_file) as f:
+            return int(f.read())
+
+    def update_counter(self, value):
+        with open(self.__counter_file, 'w') as f:
+            f.seek(0)
+            f.truncate()
+            f.write(str(value))

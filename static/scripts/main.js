@@ -40,3 +40,5 @@ $("#log-option").click(function(){
 	$("#registration-form").fadeOut(200);
 	$("#login-form").delay(300).fadeIn(500);
 });
+
+document.getElementById('screen').textContent += " " + window.screen.width+"x"+window.screen.height + ' px';

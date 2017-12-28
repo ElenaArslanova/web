@@ -96,6 +96,39 @@ input[type=text], input[type=password] {
     transition: 0.3s;
 }
 
+.digits {
+	height: 53px;
+    width: 30px;
+    display: block;
+    position: absolute;
+    margin: 0 auto;
+    margin-left: 20px;
+    top: 0;
+    padding: 0;
+    list-style: 0;
+}
+
+.list-group-item {
+	margin-top: 20px;
+  	margin-bottom: 20px;
+}
+.stats .list-group-item {
+	padding-bottom: 60px;
+}
+
+.list-group-item:first-child {
+	padding-bottom: 5px;
+}
+
+#visits-info {
+	background-color: #306d9f;
+	color: white;
+}
+
+.info-text {
+	color: black;
+}
+
 #home {
 	background: url(../images/fence.jpg) no-repeat center center fixed;
 	display: table;

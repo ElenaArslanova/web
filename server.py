@@ -1,4 +1,6 @@
 import bottle
+import datetime
+import httpagentparser
 from beaker.middleware import SessionMiddleware
 from bottle import route, request, error, response, template, post, get, run, static_file
 from cork import Cork, AuthException
@@ -18,6 +20,8 @@ escaper = Escaper()
 
 application = bottle.app()
 
+counter = alchemy.get_counter()
+
 session_opts = {
     'session.cookie_expires': True,
     'session.httponly': True,
@@ -28,15 +32,31 @@ session_opts = {
 application = SessionMiddleware(application, session_opts)
 
 
+def get_main_page_info():
+    browser_info = httpagentparser.detect(request.environ.get('HTTP_USER_AGENT'))['browser']
+    info = {}
+    info['last_time_visit'] = datetime.datetime.now().strftime('%H:%M %d-%m-%Y')
+    info['browser'] = browser_info.get('name')
+    info['version'] = browser_info.get('version')
+    info['screen'] = ''
+    info['heat'] = convert_counter_in_html(str(counter))
+    info['total_visits'] = convert_counter_in_html(str(alchemy.get_visits_count()))
+    info['today_visits'] = convert_counter_in_html(str(alchemy.get_visits_count(True)))
+    return info
+
+
 @route('/')
 def login():
+    global counter
+    counter += 1
     logged_in = is_logged_in()
     if logged_in:
         login = cork.current_user.username
     else:
         login = 'anonym'
     alchemy.update_visit(login, 'Посещение главной страницы')
-    return template('views/main.tpl', logged_in=logged_in)
+    return template('views/main.tpl', logged_in=logged_in,
+                    **get_main_page_info())
 
 
 @route('/validate_registration/<registration_code>')
@@ -64,7 +84,9 @@ def do_auth():
             session.add(user)
             session.commit()
             return 'Проверьте вашу почту'
-    return template('views/main.tpl', logged_in=is_logged_in())
+    global counter
+    counter += 1
+    return template('views/main.tpl', logged_in=is_logged_in(), **get_main_page_info())
 
 
 @route('/gallery')
@@ -140,6 +162,7 @@ def is_logged_in():
 if __name__ == "__main__":
     bottle.debug(True)
     bottle.run(app=application, host='localhost', port=8080)
+    alchemy.update_counter(counter)
 
     # thmb_paths = ["../images/thmb_polygons.jpg", "../images/thmb_home.jpg", "../images/thmb_fence.jpg",
     #               "../images/thmb_pastel1.png",

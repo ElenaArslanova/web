@@ -29,7 +29,7 @@ def convert_counter_in_html(number):
             margin = MARGIN * idx
 
         html_block.append("<li class='digits' style='{}'></li>".format(
-            'background: url("static/images/resources/digits.png") {}px 0; left: {}px;'.format(_OFFSETS[digit], margin)
+            'background: url("/images/digits.png") {}px 0; left: {}px;'.format(_OFFSETS[digit], margin)
         ))
     return """
         <div style="position: relative;">

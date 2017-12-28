@@ -13,7 +13,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/#home">Главная</a></li>
                 <li>{{!'<a href="stats">Статистика</a>' if logged_in else '<a href="/#login" id="nav-login">Вход</a>'}}</li>
-                <li><a href="/#about">Информация</a></li>
+                <li><a href="/#visits-info">Информация</a></li>
                 <li><a href="algorithms">Алгоритмы</a></li>
                 <li><a href="gallery">Галерея</a></li>
                 <li>{{!'<a href="logout">Выход</a>' if logged_in else ''}}</li>

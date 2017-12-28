@@ -47,6 +47,62 @@
 			</div>
 		</div>
 		<!-- /Home -->
+		<!-- Visits Info -->
+		<div id="visits-info" class="pad-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-offset-1 col-sm-5">
+						<div class="card">
+							<div class="card-body">
+								<h4 class="card-title">Статистика</h4>
+								<ul class="list-group stats" style="display: inline-block;">
+									<li class="list-group-item">
+										<span class="info-text">Последнее посещение: {{last_time_visit}}</span>
+									</li>
+									<li class="list-group-item">
+										<div style="position: relative;">
+											<span class="info-text">Всего посещений:</span>
+											<div class="text-center">
+												<ul>{{!total_visits}}</ul>
+											</div>
+										</div>
+									</li> 
+									<li class="list-group-item">
+										<div style="position: relative;">
+											<span class="info-text">Посещений сегодня:</span>
+											<div class="text-center">
+												<ul>{{!today_visits}}</ul>
+											</div>
+										</div> 
+									</li>
+									<li class="list-group-item">
+										<div style="position: relative;">
+											<span class="info-text">Heat'ов:</span>
+											<div class="text-center">
+												<ul>{{!heat}}</ul>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-5">
+						<div class="card">
+							<div class="card-body">
+								<h4 class="card-title">Информация о браузере</h4>
+								<ul class="list-group">
+									<li class="list-group-item info-text">Браузер: {{browser}}</li>
+									<li class="list-group-item info-text">Версия: {{version}}</li>
+									<li class="list-group-item info-text" id="screen">Разрешение экрана: {{screen}}</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Visits Info -->
 		<!-- About -->
 		<div id="about" class="pad-section">
 			<div class="container">
