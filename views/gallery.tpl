@@ -53,13 +53,13 @@
 												</li>
 												%end
 											</ul>
-											<form class="form-inline" role="form" action="/comment/img{{photo.id}}" method="post" enctype="multipart/form-data">
-												<div class="form-group">
-													<textarea id="textarea-{{photo.id}}" class="form-control" type="text" placeholder="Ваш комментарий" name="comment" cols="46"></textarea> 
-													<button id="addbutton-{{photo.id}}" class="btn btn-default">Добавить</button>
-													<button id="editbutton-{{photo.id}}" class="btn btn-default" style="display: none;">Сохранить</button>
-												</div>
-											</form>
+											<!-- <form class="form-inline" role="form" action="/comment/img{{photo.id}}" method="post" enctype="multipart/form-data"> -->
+											<div class="form-group">
+												<textarea id="textarea-{{photo.id}}" class="form-control" type="text" placeholder="Ваш комментарий" name="comment" cols="46"></textarea> 
+												<button id="addbutton-{{photo.id}}" class="btn btn-default" onclick="send_comment(event)">Добавить</button>
+												<button id="editbutton-{{photo.id}}" class="btn btn-default" style="display: none;">Сохранить</button>
+											</div>
+											<!-- </form> -->
 										</div>
 									</div>
 								</div>
@@ -83,6 +83,8 @@
 		</div>
 		<script type="text/javascript" src="../scripts/cookie.js"></script>
 		<script type="text/javascript" src="../scripts/gallery.js"></script>
+		<script type="text/javascript" src="../scripts/ajax.js"></script>
+		<script type="text/javascript" src="../scripts/xml.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	</body>
 </html>

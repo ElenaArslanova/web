@@ -80,5 +80,8 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript" src="../scripts/ajax.js"></script>
+	<script type="text/javascript" src="../scripts/xml.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>

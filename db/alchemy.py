@@ -1,5 +1,6 @@
 from sqlalchemy import create_engine, or_, and_, desc
 from sqlalchemy.orm import sessionmaker
+from collections import OrderedDict
 import datetime
 
 from db.base import Base, Photo, User, Comment, Edition, Visit
@@ -19,6 +20,12 @@ class Alchemy:
     def get_photos(self):
         return self.__session.query(Photo).all()
 
+    def get_photos_info(self):
+        info = {}
+        for photo in self.get_photos():
+            info[photo.id] = {'img': photo.image_path, 'comments': self.get_comments(photo)}
+        return info
+
     def is_free_log_email(self, potential_login, potential_email):
         user_filter = self.__session.query(User).filter(or_(User.login == potential_login,
                                                             User.email == potential_email)).all()
@@ -34,8 +41,22 @@ class Alchemy:
 
     def get_comments(self, photo_obj):
         comments = photo_obj.comments
-        return [[c.id, c.text, c.date, self.__session.query(User).filter(User.id == c.user_id).all()[0].login]
+        return [[c.id, c.text, c.date, self.__session.query(User).filter(User.id == c.user_id).one().login]
                 for c in comments]
+
+    def get_comments_updates(self, date, author):
+        comments = self.__session.query(Comment).filter(Comment.date >= date)
+        updates = OrderedDict()
+        for comment in comments:
+            user = self.__session.query(User).filter(User.id == comment.user_id).one()
+            can_edit = author == user.login
+            info = {'id': comment.id, 'user': user.login, 'date': comment.date.strftime('%H:%M %d-%m-%Y'),
+                    'text': comment.text, 'can_edit': can_edit}
+            if comment.photo_id in updates:
+                updates[comment.photo_id].append(info)
+            else:
+                updates[comment.photo_id] = [info]
+        return updates
 
     def add_edition(self, comment_id, user, text):
         user_id = self.__session.query(User).filter(User.login == user).one().id

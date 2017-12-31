@@ -192,5 +192,7 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript" src="../scripts/cookie.js"></script>
 		<script type="text/javascript" src="../scripts/main.js"></script>
+		<script type="text/javascript" src="../scripts/ajax.js"></script>
+		<script type="text/javascript" src="../scripts/xml.js"></script>
 	</body>
 </html>

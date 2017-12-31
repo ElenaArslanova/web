@@ -152,6 +152,7 @@ function closeHelp(){
 }
 
 function processKeyDown(event){
+	var textarea_focused = $('textarea').is(':focus');
 	if  (event.keyCode == 27){
 		event.preventDefault ? event.preventDefault() : (event.returnValue = false);
 		if (gallery.image_opened)
@@ -163,9 +164,9 @@ function processKeyDown(event){
 		event.preventDefault ? event.preventDefault() : (event.returnValue = false);
 		showHelp();
 		}
-	else if (event.keyCode == 37 && gallery.image_opened)
+	else if (event.keyCode == 37 && gallery.image_opened && !textarea_focused)
 		gallery.showNextImage(-1);
-	else if (event.keyCode == 39 && gallery.image_opened)
+	else if (event.keyCode == 39 && gallery.image_opened && !textarea_focused)
 		gallery.showNextImage(1);
 }
 
@@ -209,20 +210,54 @@ function clearHash() {
 
 function edit_comment(event) {
 	idxs = event.target.parentElement.id.split('-');
-	comment = $('#content-'+idxs[2]).html();
+	comment_text = $('#content-'+idxs[2]).html();
 	edit_button = '#editbutton-'+idxs[1];
 	add_button = '#addbutton-'+idxs[1];
-	textarea = '#textarea-'+idxs[1]
-	$(textarea).val(comment);
+	textarea = '#textarea-'+idxs[1];
+	$(textarea).val(comment_text);
 	$(textarea).focus();
 	$(add_button).hide();
 	$(edit_button).show();
-	$(edit_button).attr('formaction', '/edit/comment'+idxs[2]);
-	$(edit_button).onclick = function(){
+	$(document).on('click', edit_button, function(){
 		$(edit_button).hide();
 		$(add_button).show();
-	}
+		var edition = $(textarea).val();
+		ajax.post('/edit/comment'+idxs[2], {comment:edition}, function(response){
+			$('#content-'+idxs[2]).text(edition);
+			$(textarea).val('');
+		});
+	})
 }
+
+function send_comment(event) {
+	var textarea = event.target.previousElementSibling;
+	ajax.post('/comment/img' + event.target.id.split("-")[1], {comment: textarea.value},
+		      function(response) {
+		      	textarea.value = '';
+		      	get_updates();
+		      });
+}
+
+function get_updates() {
+	ajax.get('/update', {}, function(response){
+		var result = JSON.parse(response);
+		var photos = $('.comment-list');
+		var keys = Object.keys(result);
+		for (var i = 0; i < keys.length; i++){
+			var key = parseInt(keys[i]) - 1;
+			var photo = photos[key];
+			if (photo.children.length == 0) {
+				photo.insertAdjacentHTML('beforeEnd', result[keys[i]]);
+			}
+			else {
+				var last_comment = photo.children[photo.children.length - 1];
+				last_comment.insertAdjacentHTML('afterEnd', result[keys[i]]);
+			}
+		}
+	});
+}
+
+setInterval(get_updates, 5000);
 
 var gallery;
 var show_help;

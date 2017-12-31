@@ -1,6 +1,7 @@
 import bottle
 import datetime
 import httpagentparser
+import json
 from beaker.middleware import SessionMiddleware
 from bottle import route, request, error, response, template, post, get, run, static_file
 from cork import Cork, AuthException
@@ -21,6 +22,10 @@ escaper = Escaper()
 application = bottle.app()
 
 counter = alchemy.get_counter()
+
+update = {}
+
+loads = {}
 
 session_opts = {
     'session.cookie_expires': True,
@@ -52,9 +57,13 @@ def login():
     logged_in = is_logged_in()
     if logged_in:
         login = cork.current_user.username
+        alchemy.update_visit(login, 'Посещение главной страницы')
     else:
-        login = 'anonym'
-    alchemy.update_visit(login, 'Посещение главной страницы')
+        visited = bottle.request.get_cookie('visit')
+        if not visited:
+            bottle.response.set_cookie('visit', 'yes', path='/',
+                                       expires=datetime.datetime.now() + datetime.timedelta(minutes=30))
+            alchemy.update_visit(activity='Посещение главной страницы')
     return template('views/main.tpl', logged_in=logged_in,
                     **get_main_page_info())
 
@@ -96,8 +105,9 @@ def gallery():
     if is_logged_in():
         username = cork.current_user.username
     else:
-        username = ''
+        username = 'anonym'
     comments = [alchemy.get_comments(p) for p in photos]
+    update[username] = datetime.datetime.now()
     return escaper.escape(template('views/gallery.tpl', groups=groups, comments=comments,
                     logged_in=is_logged_in(), username=username))
 
@@ -109,7 +119,6 @@ def add_comment(img):
     username = cork.current_user.username
     alchemy.add_comment(photo_id, comment, username)
     alchemy.update_visit(username, 'Новый комментарий к картинке номер {}'.format(photo_id))
-    return bottle.redirect('/gallery')
 
 @route('/edit/<comment>', method='post')
 def edit(comment):
@@ -119,7 +128,20 @@ def edit(comment):
     user = cork.current_user.username
     alchemy.add_edition(comment_id, user, text)
     alchemy.update_visit(user, 'Редактирование комментария')
-    return bottle.redirect('/gallery')
+
+@route('/update')
+def update_comments():
+    global update
+    if is_logged_in():
+        username = cork.current_user.username
+    else:
+        username = 'anonym'
+    date = update[username]
+    new_comments = alchemy.get_comments_updates(date, username)
+    update[username] = datetime.datetime.now()
+    result = {photo_id: template('views/comment.tpl', comments=new_comments[photo_id], photo_id=photo_id)
+              for photo_id in new_comments}
+    return json.dumps(result)
 
 @route('/logout')
 def logout():
@@ -135,7 +157,7 @@ def algorithms():
     else:
         login = 'anonym'
     alchemy.update_visit(login, 'Просмотр алгоритмов')
-    return template('views/algorithms.tpl', logged_in=is_logged_in())
+    return template('views/algorithms.tpl', logged_in=logged_in)
 
 @route('/stats')
 def stats():
@@ -147,6 +169,25 @@ def stats():
                     logged_in=is_logged_in(),
                     comment_editions=alchemy.get_user_comments_with_editions(cork.current_user.username))
 
+@route('/load_xml')
+def create_xml():
+    global loads
+    if is_logged_in():
+        login = cork.current_user.username
+    else:
+        login = 'anonym'
+    if login not in loads:
+        loads[login] = 1
+    else:
+        loads[login] += 1
+    loads_counter = loads[login]
+    filename = 'static/xml/{}_report_{}.xml'.format(login, loads_counter)
+    with open(filename, 'w') as f:
+        f.seek(0)
+        f.truncate()
+        f.write(template('views/xml_comments.tpl', info=alchemy.get_photos_info()))
+    return '../xml/{}_report_{}.xml'.format(login, loads_counter)
+
 @route('/<filename:path>')
 def send_file(filename):
     return static_file(filename, root='static/')
@@ -155,7 +196,7 @@ def is_logged_in():
     try:
         user = cork.current_user
         return bool(user)
-    except Exception:
+    except AuthException:
         return False
 
 

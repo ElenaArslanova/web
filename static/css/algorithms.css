@@ -39,6 +39,10 @@ ul {
 	padding-top: 20px;
 }
 
+.xml {
+	text-decoration: none;
+}
+
 @media screen and (min-width: 1500px) {
 	h1 {
 		font-size: 50px;

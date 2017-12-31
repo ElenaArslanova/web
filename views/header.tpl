@@ -12,6 +12,7 @@
         <div class="collapse navbar-collapse" id="navbar-collapse-main">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/#home">Главная</a></li>
+                <li><a id="xml" onclick="download_xml(event)" style="cursor: pointer;"><span>Комментарии в xml</span></a></li>
                 <li>{{!'<a href="stats">Статистика</a>' if logged_in else '<a href="/#login" id="nav-login">Вход</a>'}}</li>
                 <li><a href="/#visits-info">Информация</a></li>
                 <li><a href="algorithms">Алгоритмы</a></li>

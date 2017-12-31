@@ -129,6 +129,10 @@ input[type=text], input[type=password] {
 	color: black;
 }
 
+.xml {
+	text-decoration: none;
+}
+
 #home {
 	background: url(../images/fence.jpg) no-repeat center center fixed;
 	display: table;
